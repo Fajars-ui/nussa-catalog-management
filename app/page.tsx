@@ -3,7 +3,6 @@ import {useEffect,useMemo,useState} from "react";
 import {supabase} from "@/lib/supabase";
 type Item={id:string;sku:string;name:string;category:string;description:string|null;size:string|null;price:number|null;status:string;stock:number;image_url:string|null;included:string|null};
 type Settings={promo_text:string;hero_image_url:string|null;hero_image_desktop_url?:string|null;hero_image_mobile_url?:string|null};
-const wa=process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6289693621442";
 const instagram="https://www.instagram.com/nussa.pnk?cnvx=MW4weWc2Mnp1Y2tncA==";
 export default function Home(){
  const [items,setItems]=useState<Item[]>([]),[cat,setCat]=useState("Semua"),[q,setQ]=useState(""),[loading,setLoading]=useState(true),[selectedImage,setSelectedImage]=useState<{url:string;name:string}|null>(null);

@@ -9,12 +9,14 @@ create table if not exists public.collections (
  size text,
  included text,
  price integer,
+ stock integer not null default 0 check (stock >= 0),
  status text not null default 'Tersedia' check (status in ('Tersedia','Disewa','Perawatan','Tidak aktif')),
  image_url text,
  is_published boolean not null default false,
  created_at timestamptz not null default now(),
  updated_at timestamptz not null default now()
 );
+alter table public.collections add column if not exists stock integer not null default 0 check (stock >= 0);
 alter table public.collections enable row level security;
 drop policy if exists "Public can view published collections" on public.collections;
 drop policy if exists "Admin can view all collections" on public.collections;

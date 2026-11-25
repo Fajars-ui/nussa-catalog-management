@@ -30,6 +30,26 @@ create policy "Admin can manage collections" on public.collections
  using ((auth.jwt() ->> 'email') = 'fajarkoma@gmail.com')
  with check ((auth.jwt() ->> 'email') = 'fajarkoma@gmail.com');
 
+create table if not exists public.site_settings (
+ id integer primary key default 1 check (id = 1),
+ promo_text text not null default 'Sewa Baju Adat untuk Momen Istimewamu',
+ hero_image_url text,
+ updated_at timestamptz not null default now()
+);
+insert into public.site_settings (id) values (1) on conflict (id) do nothing;
+alter table public.site_settings enable row level security;
+drop policy if exists "Public can view site settings" on public.site_settings;
+drop policy if exists "Admin can manage site settings" on public.site_settings;
+create policy "Public can view site settings" on public.site_settings
+ for select to anon, authenticated using (true);
+create policy "Admin can manage site settings" on public.site_settings
+ for all to authenticated
+ using ((auth.jwt() ->> 'email') = 'fajarkoma@gmail.com')
+ with check ((auth.jwt() ->> 'email') = 'fajarkoma@gmail.com');
+grant usage on schema public to anon, authenticated;
+grant select on public.collections, public.site_settings to anon, authenticated;
+grant insert, update, delete on public.collections, public.site_settings to authenticated;
+
 insert into storage.buckets (id,name,public)
  values ('collection-photos','collection-photos',true)
  on conflict (id) do nothing;

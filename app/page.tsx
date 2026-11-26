@@ -22,9 +22,9 @@ export default function Home(){
  const [siteContent,setSiteContent]=useState<any>(defaultContent);
  const [settings,setSettings]=useState<Settings>({promo_text:"Sewa Baju Adat untuk Momen Istimewamu",hero_image_url:null,hero_image_desktop_url:null,hero_image_mobile_url:null}),[cart,setCart]=useState<Item[]>([]),[cartOpen,setCartOpen]=useState(false);
  const wa=siteContent.whatsapp_number||process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6289693621442";
- const allowedCategories=["Melayu","Dayak","Jawa","Bali","Nusantara Lainnya"];
- const categoryItems=(siteContent.category_items?.length?siteContent.category_items:allowedCategories.map(name=>({name,image_url:""}))).filter((x:any)=>allowedCategories.includes(x.name));
- const cats=(siteContent.category_order||allowedCategories).filter((x:string)=>allowedCategories.includes(x));
+ const fallbackCategories=["Melayu","Dayak","Jawa","Bali","Nusantara Lainnya"];
+ const categoryItems=(siteContent.category_items?.length?siteContent.category_items:fallbackCategories.map(name=>({name,image_url:""})));
+ const cats=(siteContent.category_order?.length?siteContent.category_order:categoryItems.map((x:any)=>x.name)).filter((name:string)=>categoryItems.some((x:any)=>x.name===name));
  const shown=useMemo(()=>items.filter(x=>(cat==="Semua"||x.category===cat)&&(`${x.name} ${x.sku} ${x.description||""}`).toLowerCase().includes(q.toLowerCase())),[items,cat,q]);
  useEffect(()=>{supabase.from("collections").select("*").eq("is_published",true).order("created_at",{ascending:false}).then(({data})=>{setItems((data||[]) as Item[]);setLoading(false)});supabase.from("site_settings").select("promo_text,hero_image_url,hero_image_desktop_url,hero_image_mobile_url").eq("id",1).maybeSingle().then(({data})=>{if(data)setSettings({promo_text:data.promo_text||"Sewa Baju Adat untuk Momen Istimewamu",hero_image_url:data.hero_image_url,hero_image_desktop_url:data.hero_image_desktop_url,hero_image_mobile_url:data.hero_image_mobile_url})});supabase.from("site_content").select("content").eq("id",1).maybeSingle().then(({data})=>{if(data?.content)setSiteContent((old:any)=>({...old,...data.content,visibility:{...defaultContent.visibility,...(data.content.visibility||{})}}))})},[]);
  useEffect(()=>{if(!selectedImage)return;const onKeyDown=(e:KeyboardEvent)=>{if(e.key==="Escape")setSelectedImage(null)};window.addEventListener("keydown",onKeyDown);return()=>window.removeEventListener("keydown",onKeyDown)},[selectedImage]);

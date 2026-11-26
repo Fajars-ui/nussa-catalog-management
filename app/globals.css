@@ -130,3 +130,9 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
  .admin-quicklinks{display:grid;grid-template-columns:1fr 1fr}
  .admin-quicklinks .btn{white-space:normal;text-align:left}
 }
+
+/* NUSSA brand logo in public header */
+.site-brand{display:flex;align-items:center;justify-content:flex-start;flex:0 0 auto;width:150px;height:50px;overflow:hidden}
+.site-brand-logo{display:block;width:150px;height:50px;max-width:100%;object-fit:contain;object-position:left center}
+@media(max-width:900px){.site-brand{width:130px;height:43px}.site-brand-logo{width:130px;height:43px}}
+@media(max-width:600px){.site-brand{width:115px;height:38px}.site-brand-logo{width:115px;height:38px}}

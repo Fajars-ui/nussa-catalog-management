@@ -136,3 +136,9 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 .site-brand-logo{display:block;width:150px;height:50px;max-width:100%;object-fit:contain;object-position:left center}
 @media(max-width:900px){.site-brand{width:130px;height:43px}.site-brand-logo{width:130px;height:43px}}
 @media(max-width:600px){.site-brand{width:115px;height:38px}.site-brand-logo{width:115px;height:38px}}
+
+/* Final NUSSA logo sizing override */
+.site-header .site-brand{display:flex;flex:0 0 150px;flex-direction:row;align-items:center;justify-content:flex-start;width:150px;height:50px;overflow:hidden}
+.site-header .site-brand-logo{display:block;width:150px;height:50px;max-width:100%;object-fit:contain;object-position:left center}
+@media(max-width:900px){.site-header .site-brand{flex-basis:130px;width:130px;height:43px}.site-header .site-brand-logo{width:130px;height:43px}}
+@media(max-width:600px){.site-header .site-brand{flex-basis:115px;width:115px;height:38px}.site-header .site-brand-logo{width:115px;height:38px}}

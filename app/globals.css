@@ -164,3 +164,9 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 .catalog-filter-grid .filter-reset{align-self:end;min-height:39px;padding:10px 16px;border:1px solid #9b2028;border-radius:5px;background:#fff;color:#9b2028;font-size:12px;font-weight:700;cursor:pointer}
 .catalog-filter-grid .filter-reset:hover{background:#9b2028;color:#fff}
 @media(max-width:700px){.catalog-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}.catalog-filter-grid label{font-size:10px}.catalog-filter-grid select{font-size:12px;padding:10px}.catalog-filter-grid .filter-reset{grid-column:1/-1}}
+
+
+/* Multi-select garment sizes in Admin */
+.admin-size-options{display:flex;flex-wrap:wrap;gap:9px 16px;margin-top:8px}
+.admin-size-options label{display:inline-flex;flex-direction:row;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#49433c}
+.admin-size-options input{accent-color:#9b2028}

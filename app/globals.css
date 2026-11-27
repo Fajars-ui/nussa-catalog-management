@@ -170,3 +170,18 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 .admin-size-options{display:flex;flex-wrap:wrap;gap:9px 16px;margin-top:8px}
 .admin-size-options label{display:inline-flex;flex-direction:row;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#49433c}
 .admin-size-options input{accent-color:#9b2028}
+
+/* Contact footer spacing and social links */
+.footer-brand{margin:0;line-height:1.1}
+.footer-description{margin:4px 0 0;font-size:12px;letter-spacing:.4px;color:#d8bd8d}
+.footer-location{margin:22px auto 26px;line-height:1.6}
+.footer-location .footer-address{margin:4px 0 2px;color:#eee6d9}
+.footer-location .footer-map-link{display:block;width:max-content;max-width:100%;margin:0 auto 16px;color:#d8bd8d;text-decoration:underline;text-underline-offset:3px;font-size:13px}
+.footer-hours{margin-top:12px}
+.footer-hours strong{display:block;margin-bottom:5px}
+.footer-hours p{margin:3px 0;color:#eee6d9;font-size:13px}
+.footer-socials{margin:22px auto 24px}
+.footer-socials>strong{display:block;margin-bottom:10px;font-size:13px;letter-spacing:.4px}
+.footer-social-links{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-social-links .instagram-follow{display:inline-flex;align-items:center;gap:7px;color:#d8bd8d;font-size:13px}
+.footer-social-links .instagram-follow svg{width:21px;height:21px;display:block}

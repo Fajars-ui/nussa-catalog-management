@@ -30,7 +30,7 @@ export default function Admin(){
   const {data,error}=await supabase.from("collections").select("*").order("created_at",{ascending:false});
   if(error){setMsg(error.message);return} setItems((data||[]) as Item[]);
   const c=await supabase.from("site_content").select("content").eq("id",1).maybeSingle();
-  if(c.data?.content)setSiteContent({...defaultContent,...c.data.content,visibility:{...defaultContent.visibility,...(c.data.content.visibility||{})}});
+  if(c.data?.content){const saved=c.data.content;setSiteContent({...defaultContent,...saved,footer_description:saved.footer_description==="Pusat Penyewaan Baju Adat di Pontianak"?"Member Of Rumah Mode Pontianak":(saved.footer_description||"Member Of Rumah Mode Pontianak"),operating_hours_weekdays:saved.operating_hours_weekdays||"Senin-Jumat : Pukul 09.00-20.00 WIB",operating_hours_weekends:saved.operating_hours_weekends||"Sabtu & Minggu : Pukul 09.00-16.00 WIB",visibility:{...defaultContent.visibility,...(saved.visibility||{})}})}
   const s=await supabase.from("site_settings").select("*").eq("id",1).maybeSingle();
   if(s.data){setPromoText(s.data.promo_text||"");setHeroDesktopUrl(s.data.hero_image_desktop_url||s.data.hero_image_url||"");setHeroMobileUrl(s.data.hero_image_mobile_url||"")}
  }

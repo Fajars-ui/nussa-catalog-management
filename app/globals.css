@@ -204,5 +204,20 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 @media(max-width:480px){.size-dialog{padding:26px 20px}.size-dialog h2{font-size:25px}.size-choice-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 /* NUSSA marketplace-style mobile product cards */
-.product-sku{font-size:10px;color:#8b8175;margin:2px 0 4px}.itembody .tag{letter-spacing:.3px;font-size:10px}.itembody .price{color:#b52c32;font-size:18px;margin:8px 0 5px}.itembody .muted{margin:4px 0;font-size:11px;line-height:1.35}.itembody .status,.itembody .stock-count{font-size:10px;margin:4px 0}.itembody h3{font:600 15px "DM Sans",sans-serif;line-height:1.3;margin:4px 0 6px}.itembody .add-cart-button{padding:8px 5px;font-size:10px}.itembody .product-wa-button{padding:8px 10px;font-size:10px}.itembody>p:has(.product-wa-button){margin:6px 0 0}
-@media(max-width:600px){.collection-section.page-width{width:calc(100% - 20px)}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-bottom:40px}.item{border-radius:7px;border:1px solid #e7e2dc;min-width:0}.catalog-image-button,.no-photo{height:auto;aspect-ratio:1/1}.item .catalog-image-button img{object-fit:cover}.itembody{padding:8px 8px 9px}.itembody .tag{font-size:9px;line-height:1.25}.itembody h3{font-size:12px;line-height:1.25;margin:4px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.itembody .price{font-size:15px;margin:6px 0 4px}.itembody .muted{font-size:10px}.itembody .add-cart-button{font-size:9px;padding:8px 3px}.itembody .product-wa-button{font-size:9px;padding:7px 8px}.itembody .stock-count,.itembody .status{font-size:9px}}
+.product-sku{font-size:10px;color:#8b8175;margin:2px 0 4px}
+@media(max-width:600px){
+ .collection-section.page-width{width:calc(100% - 20px)}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-bottom:40px}
+ .item{border-radius:7px;border:1px solid #e7e2dc;min-width:0}
+ .catalog-image-button,.no-photo{height:auto;aspect-ratio:1/1}
+ .item .catalog-image-button img{object-fit:cover}
+ .itembody{padding:8px 8px 9px}
+ .itembody .tag{font-size:9px;line-height:1.25;letter-spacing:.3px}
+ .itembody h3{font:600 12px 'DM Sans',sans-serif;line-height:1.25;margin:4px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .itembody .price{color:#b52c32;font-size:15px;margin:6px 0 4px}
+ .itembody .muted{margin:4px 0;font-size:10px;line-height:1.35}
+ .itembody .status,.itembody .stock-count{font-size:9px;margin:4px 0}
+ .itembody .add-cart-button{font-size:9px;padding:8px 3px}
+ .itembody .product-wa-button{font-size:9px;padding:7px 8px}
+ .itembody>p:has(.product-wa-button){margin:6px 0 0}
+}

@@ -19,7 +19,7 @@ const defaultContent:any={
 };
 const instagram="https://www.instagram.com/nussa.pnk";
 export default function Home(){
- const [items,setItems]=useState<Item[]>([]),[cat,setCat]=useState("Semua"),[q,setQ]=useState(""),[audience,setAudience]=useState(""),[packageType,setPackageType]=useState(""),[sizeFilter,setSizeFilter]=useState(""),[colorFilter,setColorFilter]=useState(""),[sortBy,setSortBy]=useState("popular"),[loading,setLoading]=useState(true),[selectedImage,setSelectedImage]=useState<{url:string;name:string}|null>(null);[selectedProduct,setSelectedProduct]=useState<Item|null>(null);
+ const [items,setItems]=useState<Item[]>([]),[cat,setCat]=useState("Semua"),[q,setQ]=useState(""),[audience,setAudience]=useState(""),[packageType,setPackageType]=useState(""),[sizeFilter,setSizeFilter]=useState(""),[colorFilter,setColorFilter]=useState(""),[sortBy,setSortBy]=useState("popular"),[loading,setLoading]=useState(true),[selectedImage,setSelectedImage]=useState<{url:string;name:string}|null>(null),[selectedProduct,setSelectedProduct]=useState<Item|null>(null);
  const [siteContent,setSiteContent]=useState<any>(defaultContent);
  const [settings,setSettings]=useState<Settings>({promo_text:"Sewa Baju Adat untuk Momen Istimewamu",hero_image_url:null,hero_image_desktop_url:null,hero_image_mobile_url:null}),[cart,setCart]=useState<CartItem[]>([]),[cartOpen,setCartOpen]=useState(false),[sizeDialog,setSizeDialog]=useState<{item:Item;action:"cart"|"whatsapp"}|null>(null),[selectedSize,setSelectedSize]=useState("");
  const wa=siteContent.whatsapp_number||process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6289693621442";

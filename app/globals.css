@@ -185,3 +185,20 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 .footer-social-links{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-social-links .instagram-follow{display:inline-flex;align-items:center;gap:7px;color:#d8bd8d;font-size:13px}
 .footer-social-links .instagram-follow svg{width:21px;height:21px;display:block}
+
+
+/* NUSSA garment size confirmation dialog */
+.product-wa-button{border:0;cursor:pointer;font:inherit}
+.size-dialog-backdrop{position:fixed;inset:0;z-index:1200;background:rgba(20,18,16,.68);display:flex;align-items:center;justify-content:center;padding:18px}
+.size-dialog{position:relative;width:min(440px,100%);max-height:90vh;overflow:auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 18px 60px rgba(0,0,0,.25)}
+.size-dialog-close{position:absolute;top:12px;right:14px;border:0;background:transparent;font-size:28px;line-height:1;color:#625d55;cursor:pointer}
+.size-dialog h2{font:600 29px 'Playfair Display',serif;margin:10px 0 5px}
+.size-dialog-product{font-size:14px;font-weight:700;margin:0 0 18px}
+.size-choice-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:18px 0 22px}
+.size-choice-list label{display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid #ddd5c9;border-radius:6px;cursor:pointer;font-size:14px;font-weight:700}
+.size-choice-list label.selected{border-color:#9b2028;background:#fbf1f0;color:#9b2028}
+.size-choice-list input{position:absolute;opacity:0;pointer-events:none}
+.size-confirm-button{width:100%}
+.size-confirm-button:disabled{opacity:.45;cursor:not-allowed}
+.size-not-listed p{font-size:13px;line-height:1.7;color:#77736c;margin:18px 0}
+@media(max-width:480px){.size-dialog{padding:26px 20px}.size-dialog h2{font-size:25px}.size-choice-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
